@@ -3,13 +3,13 @@ const refs = {
     searchForm: document.querySelector('.search-form'),
 }
 
-const PhotosApiService = new PhotosApiService();
+const photosApiService = new PhotosApiService();
 
 refs.searchForm.addEventListener('submit', onFormSubmit);
 
 function onFormSubmit(e) {
     e.preventDefault();
 
-    PhotosApiService.query = e.currentTarget.elements.query.value;
-    PhotosApiService.fetchElementByName();
+    photosApiService.query = e.currentTarget.elements.query.value;
+    photosApiService.fetchElementByName();
 }
