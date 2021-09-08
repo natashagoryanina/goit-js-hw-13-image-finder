@@ -1,0 +1,61 @@
+.btn {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  min-width: 140px;
+  height: 40px;
+
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.9;
+  letter-spacing: 0.06em;
+  color: black;
+  align-items: center;
+  justify-content: center;
+
+  background-color: #b3cae6;
+  border: 1px solid black;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.search-form {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 170px;
+  height: 30px;
+}
+
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+}
+
+.gallery-item {
+  display: flex;
+  margin-bottom: 50px;
+  margin-right: 50px;
+}
+
+.stats {
+  display: flex;
+}
+
+.stats-item {
+  display: flex;
+  margin-right: 20px;
+}
+
+.stats-elem {
+  display: flex;
+  margin-left: 10px;
+}
+
+img {
+  width: 400px;
+}
