@@ -30,11 +30,20 @@ function onFormSubmit(e) {
     photosApiService.resetPage();
     photosApiService.fetchElementByName()
         .then(imagesMarkup)
-        .catch(error => error({ text: '0 results' }))
+        .catch(error => error({ text: '0 results' }));
+    
+    refs.gallery.scrollIntoView({
+        behavior: 'smooth',
+        block: 'end',
+    });
 }
 
 function onBtnClick(e) {
     photosApiService.fetchElementByName().then(imagesMarkup);
+    refs.gallery.scrollIntoView({
+        behavior: 'smooth',
+        block: 'end',
+    });
 }
 
 function imagesMarkup(hits) {
@@ -44,8 +53,3 @@ function imagesMarkup(hits) {
 function clearImgContainer() {
     refs.gallery.innerHTML = '';
 }
-
-refs.gallery.scrollIntoView({
-  behavior: 'smooth',
-  block: 'end',
-});
