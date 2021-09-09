@@ -8,7 +8,6 @@ const refs = {
     searchForm: document.querySelector('.search-form'),
     loadMoreBtn: document.querySelector('.btn'),
     gallery: document.querySelector('.gallery'),
-    galleryItem: document.querySelector('.gallery-item'),
 }
 
 const photosApiService = new PhotosApiService();
@@ -30,26 +29,27 @@ function onFormSubmit(e) {
     photosApiService.resetPage();
     photosApiService.fetchElementByName()
         .then(imagesMarkup)
-        .catch(error => error({ text: '0 results' }));
-    
-    refs.gallery.scrollIntoView({
-        behavior: 'smooth',
-        block: 'end',
-    });
-}
+        .catch(error => error({ text: '0 results' }))
+};
 
 function onBtnClick(e) {
     photosApiService.fetchElementByName().then(imagesMarkup);
-    refs.gallery.scrollIntoView({
-        behavior: 'smooth',
-        block: 'end',
-    });
-}
+};
 
 function imagesMarkup(hits) {
     refs.gallery.insertAdjacentHTML('beforeend', imagesTmpl(hits));
-}
+    scrollPage();
+};
 
 function clearImgContainer() {
     refs.gallery.innerHTML = '';
+};
+
+function scrollPage() {
+    setTimeout(() => {
+    document.body.scrollIntoView({
+        behavior: 'smooth',
+        block: 'end',
+    });
+  }, 0);
 }
